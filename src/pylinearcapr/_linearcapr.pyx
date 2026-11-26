@@ -206,7 +206,9 @@ cdef class StructuralProfiler:
         if energy_model not in _MODELS:
             raise ValueError(f"invalid energy model: {energy_model!r}")
 
-    def profile(self, str sequence not None) -> Profile:
+    cpdef Profile profile(self, str sequence):
+        assert sequence
+
         cdef size_t              i
         cdef string              s        = sequence.encode('ascii') # TODO: transparent extraction
         cdef size_t              seq_n    = s.size()
