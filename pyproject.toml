@@ -15,7 +15,7 @@ authors = [
 ]
 keywords = ["bioinformatics", "sequence", "structure", "RNA"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
@@ -35,13 +35,13 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-# [project.urls]
-# "Homepage" = "https://github.com/althonos/pylinearcapr/"
+[project.urls]
+"Homepage" = "https://github.com/althonos/pylinearcapr/"
 # "Documentation" = "https://pylinearcapr.readthedocs.io/en/stable/"
-# "Bug Tracker" = "https://github.com/althonos/pylinearcapr/issues"
+"Bug Tracker" = "https://github.com/althonos/pylinearcapr/issues"
 # "Changelog" = "https://github.com/althonos/pylinearcapr/blob/master/CHANGELOG.md"
 # "Coverage" = "https://codecov.io/gh/althonos/pylinearcapr/"
-# "Builds" = "https://github.com/althonos/pylinearcapr/actions"
+"Builds" = "https://github.com/althonos/pylinearcapr/actions"
 # "PyPI" = "https://pypi.org/project/pylinearcapr"
 
 [project.optional-dependencies]
