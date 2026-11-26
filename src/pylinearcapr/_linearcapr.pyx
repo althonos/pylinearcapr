@@ -206,6 +206,17 @@ cdef class StructuralProfiler:
     Attributes:
         beam_size (`int`): The beam size the structural profiler was
             initialized with.
+        energy_model (`str`): The energy model the structural profiler
+            was initialized with.
+
+    Example:
+        Profile a sequence with default parameters (beam size of 100, and
+        Turner (2004) energy model)::
+
+            >>> profiler = StructuralProfiler()
+            >>> profile = profiler.profile("ACGCUGUCUGUACUUGUAUC")
+            >>> profile.consensus()
+            'EE'
 
     """
 
@@ -233,6 +244,17 @@ cdef class StructuralProfiler:
             raise ValueError(f"invalid energy model: {energy_model!r}")
 
     cpdef Profile profile(self, str sequence):
+        """Profile the given sequence.
+
+        Arguments:
+            sequence (`str`): A nucleotide sequence to process. Uracil and
+                Thymine nucleobases are treated interchangeably.
+
+        Returns:
+            `~pylinearcapr.StructuralProfiler`: The per-nucleotide structural
+                context profile for the input sequence.
+
+        """
         assert sequence
 
         cdef size_t              i

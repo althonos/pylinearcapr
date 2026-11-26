@@ -11,7 +11,7 @@ __version__ = _linearcapr.__version__
 __all__ = [
     "Context",
     "Profile",
-    "StructuralProfiler"
+    "StructuralProfiler",
 ]
 
 __author__ = "Martin Larralde <martin.larralde@idiap.ch>"
