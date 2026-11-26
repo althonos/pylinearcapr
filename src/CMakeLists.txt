@@ -1,0 +1,2 @@
+add_subdirectory(linearcapr)
+add_subdirectory(pylinearcapr)
