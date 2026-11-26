@@ -5,7 +5,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "pylinearcapr"
 version = "0.0.1"
-description = "Cython bindings and Python interface to LinearCapR, a fast method to compute structural-context probabilities for RNA."
+description = "Cython bindings and Python interface to LinearCapR, a fast method to compute structural-context probabilities for RNA nucleotides."
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
