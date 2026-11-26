@@ -4,7 +4,7 @@
 
 [![Actions](https://img.shields.io/github/actions/workflow/status/althonos/pylinearcapr/test.yml?branch=main&logo=github&style=flat-square&maxAge=300)](https://github.com/althonos/pylinearcapr/actions)
 [![Coverage](https://img.shields.io/codecov/c/gh/althonos/pylinearcapr?style=flat-square&maxAge=3600&logo=codecov)](https://codecov.io/gh/althonos/pylinearcapr/)
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square&maxAge=2678400)](https://choosealicense.com/licenses/gpl-3.0/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=2678400)](https://choosealicense.com/licenses/mit/)
 [![PyPI](https://img.shields.io/pypi/v/pylinearcapr.svg?style=flat-square&maxAge=3600&logo=PyPI)](https://pypi.org/project/pylinearcapr)
 [![Bioconda](https://img.shields.io/conda/vn/bioconda/pylinearcapr?style=flat-square&maxAge=3600&logo=anaconda)](https://anaconda.org/bioconda/pylinearcapr)
 [![AUR](https://img.shields.io/aur/version/python-pylinearcapr?logo=archlinux&style=flat-square&maxAge=3600)](https://aur.archlinux.org/packages/python-pylinearcapr)
