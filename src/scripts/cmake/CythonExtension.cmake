@@ -55,13 +55,6 @@ else()
   )
 endif()
 
-# --- Detect `scoring-matrices` folder -----------------------------------------
-
-execute_process(
-    COMMAND ${Python_EXECUTABLE} -c "import os; import scoring_matrices; print(os.path.dirname(scoring_matrices.__path__[0]), end='')"
-    OUTPUT_VARIABLE SCORING_MATRICES_PATH
-)
-
 # --- Declare Cython extension -------------------------------------------------
 
 macro(cython_extension _name)
@@ -85,7 +78,6 @@ macro(cython_extension _name)
         --cplus
         --depfile
         -I "${CYTHON_HEADERS_DIR}"
-        -I "${SCORING_MATRICES_PATH}"
         ${CYTHON_DIRECTIVES}
     MAIN_DEPENDENCY
       ${_name}.pyx
