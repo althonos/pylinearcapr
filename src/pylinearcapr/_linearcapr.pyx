@@ -245,6 +245,10 @@ cdef class StructuralProfiler:
         ))
 
         profile.matrix = ProfileMatrix(seq_n)
+
+        if seq_n == 0:
+            return profile
+
         with nogil:
             profiler.get().run(s)
             profile.free_energy = profiler.get().get_energy_ensemble()
