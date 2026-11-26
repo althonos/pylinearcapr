@@ -1,0 +1,13 @@
+diff --git a/LinCapR.hpp b/LinCapR.hpp
+index 83a2968..93852b4 100644
+--- a/LinCapR.hpp
++++ b/LinCapR.hpp
+@@ -12,7 +12,7 @@ public:
+ 	void output(ofstream&, const string&) const;
+ 	void clear();
+ 	Float get_energy_ensemble() const;
+-private:
++
+ 	const energy::Params &params;
+ 	const int beam_size;
+ 	
