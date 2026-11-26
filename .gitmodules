@@ -1,0 +1,3 @@
+[submodule "vendor/LinearCapR"]
+	path = vendor/LinearCapR
+	url = https://github.com/hoget157/LinearCapR
