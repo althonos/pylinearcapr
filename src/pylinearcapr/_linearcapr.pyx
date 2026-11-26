@@ -258,7 +258,7 @@ cdef class StructuralProfiler:
                 context profile for the input sequence.
 
         """
-        assert sequence
+        assert sequence is not None
 
         cdef size_t              i
         cdef string              s        = sequence.encode('ascii') # TODO: transparent extraction
