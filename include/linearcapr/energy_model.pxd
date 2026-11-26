@@ -2,9 +2,9 @@
 
 cdef extern from "energy_model.hpp" namespace "energy" nogil:
 
-    ctypedef enum Model:
-        Turner2004 "energy::Model::Turner2004" 
-        Turner1999 "energy::Model::Turner1999" 
+    enum class Model:
+        Turner1999
+        Turner2004
 
     # struct Params:
     #     double temperature

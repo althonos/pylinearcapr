@@ -243,6 +243,9 @@ cdef class StructuralProfiler:
         if energy_model not in _MODELS:
             raise ValueError(f"invalid energy model: {energy_model!r}")
 
+    def __reduce__(self):
+        return type(self), (self.beam_size, self.energy_model)
+
     cpdef Profile profile(self, str sequence):
         """Profile the given sequence.
 
@@ -263,7 +266,7 @@ cdef class StructuralProfiler:
         cdef Profile             profile  = Profile.__new__(Profile)
         cdef unique_ptr[LinCapR] profiler = unique_ptr[LinCapR](new LinCapR(
             self.beam_size,
-            _MODELS[self.energy_model],
+            <Model> _MODELS[self.energy_model],
         ))
 
         profile.matrix = ProfileMatrix(seq_n)
