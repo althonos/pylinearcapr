@@ -17,6 +17,8 @@ import enum
 __version__ = PROJECT_VERSION
 
 
+cdef unsigned char[NPROBS] _CONTEXT_LETTERS = b"BEHIMS"
+
 class Context(enum.IntEnum):
     """Indices of the structural contexts in the profile matrix.
     """
@@ -167,6 +169,30 @@ cdef class Profile:
     cdef readonly Float         free_energy
     cdef readonly ProfileMatrix matrix
 
+    cpdef str consensus(self):
+        """Compute a consensus of the local structural context.
+        """
+        cdef size_t    i
+        cdef size_t    i_max
+        cdef size_t    j
+        cdef size_t    seq_n = self.matrix._shape[1]
+        
+        cdef unsigned char      c
+        cdef unsigned char      mask
+        cdef bytearray          text = bytearray(seq_n)
+        cdef unsigned char[::1] view = text
+
+        with nogil:
+            for j in range(seq_n):
+                i_max = 0
+                for i in range(NPROBS):
+                    if self.matrix.mat[i*seq_n + j] > self.matrix.mat[i_max*seq_n + j]:
+                        i_max = i
+                c = _CONTEXT_LETTERS[i_max]
+                mask = 0b0100000 * (self.matrix.mat[i_max*seq_n + j] < 0.5)
+                view[j] = c | mask
+
+        return text.decode('ascii')
 
 
 cdef dict _MODELS = {
