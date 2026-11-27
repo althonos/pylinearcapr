@@ -69,7 +69,7 @@ import pylinearcapr
 seq = "ACGCUGUCUGUACUUGUAUCAGUACACUGACGAGUCCCUAAAGGACGAAACAGCGC"
 
 profiler = pylinearcapr.StructuralProfiler()    # profiler with default parameters
-profile = profiler.profile(sequence)            # run LinearCapR on a text profile
+profile = profiler.profile(seq)            # run LinearCapR on a text profile
 
 print("free energy: ", profile.free_energy)
 print("consensus: ", profile.consensus())
