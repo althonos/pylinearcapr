@@ -80,8 +80,21 @@ The probability matrix implements the buffer protocol, so you can turn it
 transparently into a NumPy array without copying the underlying:
 
 ```python
+import numpy 
+
 probabilities = numpy.asarray(profile.matrix)
 probabilities.sum(axis=0)  # should be 1.0 at every position
+```
+
+You can easily produce a per-nucleotide probability plot with matplotlib, here using the `pylinearcapr.Context` enum to make the code clearer:
+
+```python
+import matplotlib.pyplot as plt
+
+for c in pylinearcapr.Context:
+    plt.plot(profile.matrix[c], label=c.name)
+plt.legend()
+plt.show()
 ```
 
 ## 🧶 Thread-safety
